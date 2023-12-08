@@ -1,0 +1,132 @@
+﻿@model IEnumerable<KobeTown.Models.EFcodeFirts.ProductCategory>
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .page-header {
+        margin: -10px;
+        padding-bottom: -5px;
+    }
+
+    .card-body {
+        padding: 5px 20px 20px 20px;
+    }
+</style>
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">Quản Lý Danh Mục Sản Phẩm</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Danh Mục Sản Phẩm</li>
+            </ol>
+        </nav>
+
+    </div>
+    <div class="card-body">
+        <div class="header-right d-flex flex-wrap mt-2 mt-sm-0">
+            <h4 class="card-title">Danh sách danh mục sản phẩm</h4>
+            <div class="card-tools">
+                <a href="/Admin/ProductCategory/Create" class=" btn btn-primary">Thêm mới</a>
+                <a href="#" class=" btn btn-danger" id="btnDeleteAll">Xóa</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="SelectAll" /></th>
+                            <th>STT</th>
+                            <th>Tiêu đề</th>
+                            <th>Ngày tạo</th>
+                            @*<th>Hiển thị</th>*@
+
+                            <th style="width:150px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            var i = 1;
+                            foreach (var item in Model)
+                            {
+                                //var strCheck = item.IsActive ? "i class= 'fa fa-check text-success'></i>" : "<i class ='fa fa-cancel text-danger'></i>";
+                                <tr id="trow_@item.Id">
+                                    <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
+                                    <td>@item.Title</td>
+
+                                    <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+
+                                    <td class="text-center">
+                                        <a href="/admin/productcategory/edit" data-id="@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                        <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4">Không có bản ghi nào!!!</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- content-wrapper ends -->
+    </div>
+
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '#btnDeleteAll', function (e) {
+                e.prevenDefault();
+                var str = "";
+                var ckeckbox = $(this).parents('.card').find('tr td input:checkbox');
+                var i = 0;
+                checkbox.each(function () {
+                    if (this.checked) {
+                        var _id = $(this).val();
+                        if (i === 0) {
+                            str += _id;
+                        } else {
+                            str += "," + _id;
+                        }
+                        i++;
+                    } else {
+                        ckeckbox.attr('selected', '');
+                    }
+                });
+                if (str.length > 0) {
+                    var conf = confirm('Bạn có muốn xóa bản ghi này không?');
+                    if (conf === true) {
+                        $.ajax({
+                            url: 'Admin/ProductCategory/deleteAll',
+                            type: 'POST',
+                            data: { ids: str },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    location.reload();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+            $('body').on('change', '#SelectAll', function () {
+                var checkStatus
+            })
+        })
+    </script>
+
+
+
+}
+
+
