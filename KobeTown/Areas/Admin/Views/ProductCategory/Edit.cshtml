@@ -1,0 +1,85 @@
+﻿@model KobeTown.Models.EFcodeFirts.ProductCategory
+@{
+    ViewBag.Title = "Cập nhật danh mục sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .page-header {
+        margin: -10px;
+        padding-bottom: -5px;
+    }
+
+    .card-body {
+        padding: 5px 20px 20px 20px;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">Quản Lý Danh Mục Sản Phẩm</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/Product/Index">Danh Mục Sản Phẩm</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cập Nhật</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-header">
+                    <h4 class="card-title">Cập nhật danh mục sản phẩm</h4>
+                </div>
+                @using (Html.BeginForm("Edit", "ProductCategory", FormMethod.Post, new { }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(x => x.Id)
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="active tab-pane" id="activity">
+                                    <div class="form-group">
+                                        <label for="exampleIputEmail1">Tiêu đề</label>
+                                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Tiêu đề" })
+                                        @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleIputEmail1">Mô tả</label>
+                                        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @placeholder = "Mô tả" })
+                                        @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleIputEmail1">Icon</label>
+                                        @Html.TextBoxFor(x => x.Icon, new { @class = "form-control", @placeholder = "Hình ảnh" })
+                                        @Html.ValidationMessageFor(x => x.Icon, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleIputEmail1">Alias</label>
+                                        @Html.TextBoxFor(x => x.Alias, new { @class = "form-control", @placeholder = "Alias" })
+                                        @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="/Admin/ProductCategory" class="btn btn-danger">Quay lại</a>
+                                        <button type="submit" class="btn btn-primary">Lưu</button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,7 @@ namespace KobeTown.Areas.Admin.Controllers
         {
             IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);
             var pageSize = 10;
-            if(page == null)
+            if (page == null)
             {
                 page = 1;
             }
@@ -31,7 +31,54 @@ namespace KobeTown.Areas.Admin.Controllers
         }
         public ActionResult Create()
         {
+            ViewBag.ProductCategory = new SelectList(db.ProductCategories.ToList(), "Id", "Title");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Product model, List<string> Images, List<int> rDefault)
+        {
+            if(ModelState.IsValid)
+            {
+                if(Images !=null && Images.Count > 0)
+                {
+                    for(int i = 0; i < Images.Count; i++)
+                    {
+                        if(i + 1 == rDefault[0])
+                        {
+                            model.Image = Images[i];
+                            model.ProductImage.Add(new ProductImage
+                            {
+                                ProductId = model.Id,
+                                Image = Images[i],
+                                IsDefault = true
+                            });
+                        }
+                        else
+                        {
+                            model.ProductImage.Add(new ProductImage
+                            {
+                                ProductId = model.Id,
+                                Image = Images[i],
+                                IsDefault = false
+                            });
+                        }    
+                    }    
+                }
+                model.CreatedDate = DateTime.Now;
+                model.ModifiedDate = DateTime.Now;
+                if (string.IsNullOrEmpty(model.Alias))
+                    model.Alias = KobeTown.Models.Common.Filter.FilterChar(model.Title);
+                db.Products.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }    
+            ViewBag.ProductCategory = new SelectList(db.ProductCategories.ToList(), "Id", "Title");
             return View();
         }
     }
-}
+
+}        
+
+   

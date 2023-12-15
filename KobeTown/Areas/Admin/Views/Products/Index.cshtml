@@ -29,8 +29,10 @@
         <div class="header-right d-flex flex-wrap mt-2 mt-sm-0">
             <h4 class="card-title">Danh sách sản phẩm</h4>
             <button style="margin-left:610px" type="button" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text">
-                <i class="mdi mdi-plus-circle"></i> <a href="/Admin/Products/Create">Add Prodcut</a>
+                <i class="mdi mdi-plus-circle"></i> <a href="/Admin/Products/Create">Add Product</a>
             </button>
+
+
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -55,7 +57,7 @@
                                 <tr id="trow_@item.Id">
                                     <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
                                     <td>@i</td>
-                                    <td><img src="@item.Image width="50" /></td>
+                                    <td><img src="@item.ProductImage.FirstOrDefault(x=>x.IsDefault).Image" width="50" /></td>
                                     <td>@item.Title</td>
                                     <td>@item.ProductCategory.Title</td>
                                     <td>@item.Quantity</td>
@@ -85,12 +87,12 @@
                 </div>
             </div>
         </div>
-
-
+    </div>
+</div>
         <!-- content-wrapper ends -->
 
 
-        @section scripts{
+        @*@section scripts{
             <script>
         $(document).ready(function () {
             $('body').on('click', '#btnDeleteAll', function (e) {
@@ -131,8 +133,4 @@
                 var checkStatus
             })
         })
-            </script>
-
-
-
-        }
+            </script>*@

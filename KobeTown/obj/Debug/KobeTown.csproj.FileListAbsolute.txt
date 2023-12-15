@@ -115,3 +115,6 @@ C:\Source Code\DACN\KobeTown\KobeTown\bin\PagedList.Mvc.xml
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.addIsActiveProduct.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.droptablecategory.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.updateProductCategory.resources
+C:\Source Code\DACN\KobeTown\KobeTown\bin\CKFinder.dll
+C:\Source Code\DACN\KobeTown\KobeTown\bin\CKFinder.pdb
+C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.updateProduct.resources
