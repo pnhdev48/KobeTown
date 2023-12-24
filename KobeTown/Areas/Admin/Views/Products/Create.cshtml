@@ -43,7 +43,7 @@
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Thông tin</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Hình ảnh</a></li>
+                                @*<li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Hình ảnh</a></li>*@
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -141,46 +141,39 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
                                 <!-- /.tab-pane -->
-                                <div class="tab-pane" id="timeline">
-                                    <div class="row">
-                                        <div class="col-md-12 text-right">
-                                            <input type="button" class="btn btn-primary" id="iTaiAnh" onclick="BrowseServer()" value="Tải ảnh" />
+    
+                                <div class="row">
+                                    <label for="exampleIputEmail1">Hình ảnh</label>
+                                    <div class="col-md-12 text-right">
+                                        <input type="button" class="btn btn-primary" id="iTaiAnh" onclick="BrowseServer()" value="Tải ảnh" />
 
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <table class="table table-hover" id="tbAnhSanPham">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">#</th>
-                                                        <th class="text-center">Ảnh</th>
-                                                        <th class="text-center">Ảnh đại diện</th>
-                                                        <th class="text-center">Thao tác</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="tbHtml">
-                                                    @*<tr>
-                                        <td class="text-center">1</td>
-                                        <td class="text-center"><img width="80" src="" /></td>
-                                        <td class="text-center"><input type="radio" name="rDefault" /></td>
-                                        <td class="text-center"><a href="#" class="btn btn-sm btn-danger">Xóa</a></td>
-                                    </tr>*@
-                                                </tbody>
-                                            </table>
-                                            <input type="hidden" id="tCurrentId" value="0" />
-                                        </div>
                                     </div>
 
+                                    <div class="col-md-12">
+                                        <table class="table table-hover" id="tbAnhSanPham">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Ảnh</th>
+                                                    <th class="text-center">Ảnh đại diện</th>
+                                                    <th class="text-center">Thao tác</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbHtml">
+                                                @*<tr>
+                        <td class="text-center">1</td>
+                        <td class="text-center"><img width="80" src="" /></td>
+                        <td class="text-center"><input type="radio" name="rDefault" /></td>
+                        <td class="text-center"><a href="#" class="btn btn-sm btn-danger">Xóa</a></td>
+                    </tr>*@
+                                            </tbody>
+                                        </table>
+                                        <input type="hidden" id="tCurrentId" value="0" />
+
+                                    </div>
                                 </div>
+
                                 <!-- /.tab-pane -->
                                 <!-- /.tab-pane -->
                             </div>

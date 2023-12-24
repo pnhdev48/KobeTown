@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KobeTown.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace KobeTown.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             return View();
@@ -25,6 +27,11 @@ namespace KobeTown.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult Arrivals()
+        {
+            var items = db.ProductCategories.ToList();
+            return PartialView("_Arrivals", items);
         }
     }
 }
