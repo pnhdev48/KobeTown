@@ -52,6 +52,7 @@ C:\Source Code\DACN\KobeTown\KobeTown\bin\roslyn\VBCSCompiler.exe
 C:\Source Code\DACN\KobeTown\KobeTown\bin\roslyn\VBCSCompiler.exe.config
 C:\Source Code\DACN\KobeTown\KobeTown\bin\Antlr3.Runtime.dll
 C:\Source Code\DACN\KobeTown\KobeTown\bin\CKFinder.dll
+C:\Source Code\DACN\KobeTown\KobeTown\bin\Dapper.dll
 C:\Source Code\DACN\KobeTown\KobeTown\bin\EntityFramework.dll
 C:\Source Code\DACN\KobeTown\KobeTown\bin\EntityFramework.SqlServer.dll
 C:\Source Code\DACN\KobeTown\KobeTown\bin\Microsoft.AspNet.Identity.Core.dll
@@ -81,6 +82,7 @@ C:\Source Code\DACN\KobeTown\KobeTown\bin\System.Web.WebPages.dll
 C:\Source Code\DACN\KobeTown\KobeTown\bin\System.Web.WebPages.Razor.dll
 C:\Source Code\DACN\KobeTown\KobeTown\bin\WebGrease.dll
 C:\Source Code\DACN\KobeTown\KobeTown\bin\CKFinder.pdb
+C:\Source Code\DACN\KobeTown\KobeTown\bin\Dapper.xml
 C:\Source Code\DACN\KobeTown\KobeTown\bin\PagedList.xml
 C:\Source Code\DACN\KobeTown\KobeTown\bin\PagedList.Mvc.xml
 C:\Source Code\DACN\KobeTown\KobeTown\bin\System.Web.Helpers.xml
@@ -114,6 +116,9 @@ C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.droptablecat
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.updateProductCategory.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.updateProduct.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.addShoppingCart.resources
+C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.UpdatePaymentV1.resources
+C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.UpdateOrderDetail.resources
+C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.CreateTableThongKe.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.GenerateResource.cache
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.CoreCompileInputs.cache
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.CopyComplete

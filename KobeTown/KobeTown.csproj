@@ -50,6 +50,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Content\ckfinder\bin\Release\CKFinder.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.1.24\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -217,18 +220,35 @@
     <Compile Include="Migrations\202312291317339_addShoppingCart.designer.cs">
       <DependentUpon>202312291317339_addShoppingCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312301710161_UpdatePaymentV1.cs" />
+    <Compile Include="Migrations\202312301710161_UpdatePaymentV1.designer.cs">
+      <DependentUpon>202312301710161_UpdatePaymentV1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312301821084_UpdateOrderDetail.cs" />
+    <Compile Include="Migrations\202312301821084_UpdateOrderDetail.designer.cs">
+      <DependentUpon>202312301821084_UpdateOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312301838507_CreateTableThongKe.cs" />
+    <Compile Include="Migrations\202312301838507_CreateTableThongKe.designer.cs">
+      <DependentUpon>202312301838507_CreateTableThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
     <Compile Include="Models\Common\Filter.cs" />
+    <Compile Include="Models\Common\ThongKeTruyCap.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\EFcodeFirts\Order.cs" />
     <Compile Include="Models\EFcodeFirts\OrderDetail.cs" />
     <Compile Include="Models\EFcodeFirts\Product.cs" />
     <Compile Include="Models\EFcodeFirts\ProductCategory.cs" />
     <Compile Include="Models\EFcodeFirts\ProductImage.cs" />
+    <Compile Include="Models\EFcodeFirts\ThongKe.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\ThongKeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -4358,6 +4378,11 @@
     <Content Include="Views\Products\Detail.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Partial_Item_Cart.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOut.cshtml" />
+    <Content Include="Views\ShoppingCart\Partial_Item_ThanhToan.cshtml" />
+    <Content Include="Views\ShoppingCart\Partial_CheckOut.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOutSuccess.cshtml" />
+    <Content Include="Views\Home\Refresh.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4397,6 +4422,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312291317339_addShoppingCart.resx">
       <DependentUpon>202312291317339_addShoppingCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301710161_UpdatePaymentV1.resx">
+      <DependentUpon>202312301710161_UpdatePaymentV1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301821084_UpdateOrderDetail.resx">
+      <DependentUpon>202312301821084_UpdateOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301838507_CreateTableThongKe.resx">
+      <DependentUpon>202312301838507_CreateTableThongKe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

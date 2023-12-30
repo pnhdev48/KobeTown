@@ -41,6 +41,7 @@ namespace KobeTown.Models.EFcodeFirts
         public decimal Price { get; set; }
         public decimal? PriceSale { get; set; }
         public int Quantity { get; set; }
+        public int ViewCount { get; set; }
         public bool IsHome { get; set; }
         public bool IsFeature { get; set; }
         public bool IsHot { get; set; }

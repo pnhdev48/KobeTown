@@ -27,7 +27,7 @@ namespace KobeTown.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-       
+        public DbSet<ThongKe> ThongKes { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Product> Products { get; set; }
