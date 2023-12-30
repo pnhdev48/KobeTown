@@ -1,4 +1,5 @@
 ﻿using KobeTown.Models;
+using KobeTown.Models.EFcodeFirts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,34 @@ namespace KobeTown.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            return View();
+            var items = db.Products.ToList();
+            return View(items);
         }
 
+        public ActionResult ProductCategory(string alias, int id)
+        {
+            var items = db.Products.ToList();
+            if (id >0)
+            {
+                items = items.Where(x => x.ProductCategoryId == id).ToList();
+            }
+            var cate = db.ProductCategories.Find(id);
+            if(cate != null)
+            {
+                ViewBag.CateName = cate.Title;
+            }
+            ViewBag.CateId = id;
+            return View(items);
+        }
+
+        public ActionResult Detail(string alias, int id)
+        {
+            var item = db.Products.Find(id);
+
+            return View(item);
+        }
+
+       
         public ActionResult Partial_ItemByCateId()
         {
             var items = db.Products.Where(x => x.IsHome && x.IsActive).Take(12).ToList();

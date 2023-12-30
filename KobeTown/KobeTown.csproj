@@ -189,6 +189,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +213,10 @@
     <Compile Include="Migrations\202312151358500_updateProduct.designer.cs">
       <DependentUpon>202312151358500_updateProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312291317339_addShoppingCart.cs" />
+    <Compile Include="Migrations\202312291317339_addShoppingCart.designer.cs">
+      <DependentUpon>202312291317339_addShoppingCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -223,6 +228,7 @@
     <Compile Include="Models\EFcodeFirts\ProductImage.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -4273,6 +4279,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jsShopping.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Uploads\images\sanpham\apple-watch.jpg" />
     <Content Include="Uploads\images\sanpham\apple-watch_2.jpg" />
@@ -4345,6 +4352,12 @@
     <Content Include="Views\Home\_Arrivals.cshtml" />
     <Content Include="Views\Products\Partial_ItemByCateId.cshtml" />
     <Content Include="Views\Products\Partial_ProductSale.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Home\_MenuCategory.cshtml" />
+    <Content Include="Views\Products\ProductCategory.cshtml" />
+    <Content Include="Views\Products\Detail.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Partial_Item_Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4381,6 +4394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312151358500_updateProduct.resx">
       <DependentUpon>202312151358500_updateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312291317339_addShoppingCart.resx">
+      <DependentUpon>202312291317339_addShoppingCart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
 <!-- Slider -->
 
 <div class="main_slider" style="background-image:url(/Content/assets/images/slider_1.jpg)">
@@ -51,12 +51,12 @@
 
 <div class="new_arrivals">
     <div class="container">
-        @Html.Action("Arrivals","Home")
+        @Html.Action("Arrivals", "Home")
     </div>
 </div>
 
 
-@Html.Action("Partial_ProductSale","Products")
+@Html.Action("Partial_ProductSale", "Products")
 <!-- Deal of the week -->
 
 <div class="deal_ofthe_week">

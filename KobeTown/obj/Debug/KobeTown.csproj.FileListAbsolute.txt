@@ -113,6 +113,7 @@ C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.addIsActiveP
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.droptablecategory.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.updateProductCategory.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.updateProduct.resources
+C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.addShoppingCart.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.GenerateResource.cache
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.CoreCompileInputs.cache
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.CopyComplete

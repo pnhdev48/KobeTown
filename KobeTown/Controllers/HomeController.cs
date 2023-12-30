@@ -33,5 +33,14 @@ namespace KobeTown.Controllers
             var items = db.ProductCategories.ToList();
             return PartialView("_Arrivals", items);
         }
+        public ActionResult MenuCategory(int? id)
+        {
+            if(id != null)
+            {
+                ViewBag.CateId = id;
+            }
+            var items = db.ProductCategories.ToList();
+            return PartialView("_MenuCategory", items);
+        }
     }
 }
