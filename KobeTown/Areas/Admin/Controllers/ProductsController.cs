@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace KobeTown.Areas.Admin.Controllers
 {
-
+    [Authorize(Roles = "Admin")]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

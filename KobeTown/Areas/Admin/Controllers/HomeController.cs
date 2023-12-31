@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace KobeTown.Areas.Admin.Controllers
 {
+
+    [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
         // GET: Admin/Home

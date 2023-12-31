@@ -119,8 +119,13 @@ C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.addShoppingC
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.UpdatePaymentV1.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.UpdateOrderDetail.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.CreateTableThongKe.resources
+C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.Migrations.updateemailorder.resources
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.GenerateResource.cache
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.CoreCompileInputs.cache
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.csproj.CopyComplete
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.dll
 C:\Source Code\DACN\KobeTown\KobeTown\obj\Debug\KobeTown.pdb
+C:\Source Code\DACN\KobeTown\KobeTown\bin\FireSharp.dll
+C:\Source Code\DACN\KobeTown\KobeTown\bin\FireSharp.Serialization.JsonNet.dll
+C:\Source Code\DACN\KobeTown\KobeTown\bin\RestSharp.dll
+C:\Source Code\DACN\KobeTown\KobeTown\bin\RestSharp.xml
