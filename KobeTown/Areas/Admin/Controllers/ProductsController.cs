@@ -1,16 +1,24 @@
 ﻿using KobeTown.Models;
 using KobeTown.Models.EFcodeFirts;
-using PagedList;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc; 
+using System.Web.Mvc;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using FireSharp;
+using PagedList;
+using System.Diagnostics;
 
 
 namespace KobeTown.Areas.Admin.Controllers
 {
+    
     [Authorize(Roles = "Admin")]
+    
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -39,13 +47,13 @@ namespace KobeTown.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Product model, List<string> Images, List<int> rDefault)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                if(Images !=null && Images.Count > 0)
+                if (Images != null && Images.Count > 0)
                 {
-                    for(int i = 0; i < Images.Count; i++)
+                    for (int i = 0; i < Images.Count; i++)
                     {
-                        if(i + 1 == rDefault[0])
+                        if (i + 1 == rDefault[0])
                         {
                             model.Image = Images[i];
                             model.ProductImage.Add(new ProductImage
@@ -63,8 +71,8 @@ namespace KobeTown.Areas.Admin.Controllers
                                 Image = Images[i],
                                 IsDefault = false
                             });
-                        }    
-                    }    
+                        }
+                    }
                 }
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;
@@ -72,8 +80,10 @@ namespace KobeTown.Areas.Admin.Controllers
                     model.Alias = KobeTown.Models.Common.Filter.FilterChar(model.Title);
                 db.Products.Add(model);
                 db.SaveChanges();
+
+            
                 return RedirectToAction("Index");
-            }    
+            }
             ViewBag.ProductCategory = new SelectList(db.ProductCategories.ToList(), "Id", "Title");
             return View();
         }
@@ -103,10 +113,16 @@ namespace KobeTown.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
+
+
             var item = db.Products.Find(id);
+            if (item == null)
+            {
+                return Json(new { success = false, message = "Sản phẩm không tồn tại" });
+            }
             if (item != null)
             {
-                //var DeleteItem = db.ProductCategories.Attach(item);
+                // Xóa sản phẩm từ cơ sở dữ liệu
                 db.Products.Remove(item);
                 db.SaveChanges();
                 return Json(new { success = true });

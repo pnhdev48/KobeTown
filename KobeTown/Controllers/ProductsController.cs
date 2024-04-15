@@ -2,6 +2,7 @@
 using KobeTown.Models.EFcodeFirts;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -59,5 +60,12 @@ namespace KobeTown.Controllers
             var items = db.Products.Where(x => x.IsSale && x.IsActive).Take(12).ToList();
             return PartialView(items);
         }
+
+        public ActionResult Search(string keyword)
+        {
+            var products = db.Products.Where(p => p.Title.Contains(keyword)).ToList();
+            return Json(products, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

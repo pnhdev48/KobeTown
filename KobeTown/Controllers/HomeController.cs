@@ -5,11 +5,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using KobeTown.Models.EFcodeFirts;
+using System.Threading.Tasks;
+
+
 namespace KobeTown.Controllers
 {
     public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+       
+
         public ActionResult Index()
         {
             return View();
@@ -42,6 +48,10 @@ namespace KobeTown.Controllers
             var items = db.ProductCategories.ToList();
             return PartialView("_MenuCategory", items);
         }
+
+
+
+
 
         public ActionResult Refresh()
         {

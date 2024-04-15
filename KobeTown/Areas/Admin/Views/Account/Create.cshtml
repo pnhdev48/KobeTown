@@ -46,10 +46,11 @@
                     @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
-                    <label>Nhập lại Mật khẩu</label>
+                    <label>Xác nhận mật khẩu</label>
                     @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
+                    <a href="/Admin/account/index" class="btn btn-danger">Quay lại</a>
                     <button type="submit" class="btn btn-success">Thêm mới</button>
                 </div>
             }
